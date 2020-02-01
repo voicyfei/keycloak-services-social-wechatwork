@@ -9,6 +9,10 @@ To install the social wechat work one has to:
 
 * Add the jar to the Keycloak server (create `providers` folder if needed):
   * `$ cp target/keycloak-services-social-wechat-work-{x.y.z}.jar _KEYCLOAK_HOME_/providers/` 
+* Add config line in keycloak config
+  * in file KEYCLOAK_HOME/modules/system/layers/keycloak/org/keycloak/keycloak-services/main/module.xml 
+    add line 
+    <module name="org.infinispan" services="import"/>
 
 * Add config page templates to the Keycloak server:
   * `$ cp themes/base/admin/resources/partials/realm-identity-provider-wechat-work.html _KEYCLOAK_HOME_/themes/base/admin/resources/partials/`
@@ -17,3 +21,4 @@ To install the social wechat work one has to:
 Be ware you need to fill in corpid, agentid and agent secret.
 
 based on https://github.com/jyqq163/keycloak-services-social-weixin
+based on https://github.com/kkzxak47/keycloak-services-social-wechatwork
