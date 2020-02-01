@@ -12,7 +12,7 @@ To install the social wechat work one has to:
 * Add config line in keycloak config
   in file KEYCLOAK_HOME/modules/system/layers/keycloak/org/keycloak/keycloak-services/main/module.xml 
     add line 
-  * <module name="org.infinispan" services="import"/>
+  * `<module name="org.infinispan" services="import"/>`
 
 * Add config page templates to the Keycloak server:
   * `$ cp themes/base/admin/resources/partials/realm-identity-provider-wechat-work.html _KEYCLOAK_HOME_/themes/base/admin/resources/partials/`
