@@ -15,8 +15,8 @@ To install the social wechat work one has to:
   * `<module name="org.infinispan" services="import"/>`
 
 * Add config page templates to the Keycloak server:
-  * `$ cp themes/base/admin/resources/partials/realm-identity-provider-wechat-work.html _KEYCLOAK_HOME_/themes/base/admin/resources/partials/`
-  * `$ cp themes/base/admin/resources/partials/realm-identity-provider-wechat-work-ext.html _KEYCLOAK_HOME_/themes/base/admin/resources/partials/`
+  * `$ cp themes/base/admin/resources/partials/realm-identity-provider-wechat-work.html $_KEYCLOAK_HOME_/themes/base/admin/resources/partials/`
+  * `$ cp themes/base/admin/resources/partials/realm-identity-provider-wechat-work-ext.html $_KEYCLOAK_HOME_/themes/base/admin/resources/partials/`
 
 Be ware you need to fill in corpid, agentid and agent secret.
 
