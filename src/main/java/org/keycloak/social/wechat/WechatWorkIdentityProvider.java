@@ -51,9 +51,9 @@ import java.util.concurrent.TimeUnit;
 public class WechatWorkIdentityProvider extends AbstractOAuth2IdentityProvider<WechatWorkProviderConfig>
         implements SocialIdentityProvider<WechatWorkProviderConfig> {
 
-    public static final String AUTH_URL = "https://open.weixin.qq.com/connect/oauth2/authorize";
-    public static final String QRCODE_AUTH_URL = "https://open.work.weixin.qq.com/wwopen/sso/qrConnect";  // 企业微信外使用
-    public static final String TOKEN_URL = "https://qyapi.weixin.qq.com/cgi-bin/gettoken";
+    // public static final String AUTH_URL = "https://open.weixin.qq.com/connect/oauth2/authorize";
+    // public static final String QRCODE_AUTH_URL = "https://open.work.weixin.qq.com/wwopen/sso/qrConnect";  // 企业微信外使用
+    // public static final String TOKEN_URL = "https://qyapi.weixin.qq.com/cgi-bin/gettoken";
 
     public static final String DEFAULT_SCOPE = "snsapi_base";
     public static final String DEFAULT_RESPONSE_TYPE = "code";
@@ -127,7 +127,7 @@ public class WechatWorkIdentityProvider extends AbstractOAuth2IdentityProvider<W
 
     private JsonNode _renew_access_token() {
         try {
-            JsonNode j = SimpleHttp.doGet(TOKEN_URL, session)
+            JsonNode j = SimpleHttp.doGet(getConfig().getTokenUrl(), session)
                                    .param(WEIXIN_CORP_ID, getConfig().getClientId())
                                    .param(WEIXIN_CORP_SECRET, getConfig().getClientSecret()).asJson();
 //            logger.info("request wechat work access token " + j.toString());
@@ -146,9 +146,9 @@ public class WechatWorkIdentityProvider extends AbstractOAuth2IdentityProvider<W
 
     public WechatWorkIdentityProvider(KeycloakSession session, WechatWorkProviderConfig config) {
         super(session, config);
-        config.setAuthorizationUrl(AUTH_URL);
-        config.setQrcodeAuthorizationUrl(QRCODE_AUTH_URL);
-        config.setTokenUrl(TOKEN_URL);
+        // config.setAuthorizationUrl(AUTH_URL);
+        // config.setQrcodeAuthorizationUrl(QRCODE_AUTH_URL);
+        // config.setTokenUrl(TOKEN_URL);
     }
 
     @Override
